@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Jost' rel='stylesheet'>
     <link rel="icon" href="images/logo2.png">
     <title>Pumapapel Pop-Up Design Studio</title>
     <link rel="stylesheet" href="style.css">
@@ -22,28 +22,28 @@
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 1000; 
+
 }
 
 .header.scrolled {
     background-color: #f0c040;
     padding: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    justify-content: center; /* Center content when scrolled */
+    justify-content: center; 
 }
 
 /* Logo styling */
 .logo-image {
     width: 180px;
     height: auto;
-    margin-right: 20px; /* Space between logo and nav links */
+    margin-right: 20px; 
     transition: transform 0.3s, width 0.3s;
 }
 
 .header.scrolled .logo-image {
-    display: none; /* Hide logo when scrolled */
+    display: none; 
 }
-
-
 
 .logo h1 {
     margin: 0;
@@ -68,9 +68,9 @@
 }
 
 .navbar {
-    font-family: 'Inter';
+    font-family: 'Jost';
     display: flex;
-    gap: 80px;
+    gap: 85px;
     margin: 0;
     padding: 10px 20px; 
     list-style: none;
@@ -104,6 +104,105 @@
     color: #fff; 
 }
 
+/* Hero Section Styles */
+.hero {
+    display: flex;
+    padding: 100px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url('images/pic0.png') no-repeat center;
+    background-size: cover;
+    color: #fff;
+    height: 100vh; /* Set a height to your hero section, if needed, to fill the viewport */
+
+}
+
+.hero-image {
+    
+    width: 100%; /* Ensure the image takes full width */
+    height: auto; /* Adjust the height as needed */
+}
+
+.hero-text {
+    width: 80%;
+    padding: 20px;
+    margin-top: 100px; 
+    color: white;
+}
+
+.hero-text h2 {
+    font-family: 'Jost';
+    font-size: 48px;
+    font-weight: 800px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-family: 'Jost';
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    font-family: 'Jost';
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    position: relative; 
+    text-decoration: none;
+    background-color: #f0c040;
+    color: #000;
+    padding: 10px 20px; 
+    border-radius: 100px; 
+    font-weight: 200;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease; 
+}
+
+.btn:hover {
+    background-color: #d4a838;
+    transform: translateY(5px); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.arrow-right {
+    position: relative; 
+    font-size: 20px; 
+    font-weight: 900; 
+    color: #000; 
+}
+
+.circle-indicators {
+    display: flex;
+    justify-content: center;
+    position: absolute; /* Position absolutely within the hero section */
+    bottom: -180px; /* Adjust distance from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    background-color: #000; /* Default color for the circle */
+    border-radius: 50%;
+    margin: 0 5px; /* Space between the circles */
+    opacity: 0.5; /* Lower opacity for inactive circles */
+    transition: opacity 0.3s;
+}
+
+.circle.active {
+    opacity: 10; /* Full opacity for the active circle */
+}
+
+
+
+
+
+
 /* Latest Story */
 .wave-background-container {
     position: relative;
@@ -136,7 +235,7 @@
     font-size: 43px; 
     color: #000; 
     font-weight: 600;
-    font-family: 'Inter';
+    font-family: 'Jost';
 }
 
 .stories-container {
@@ -190,88 +289,7 @@
     background-color: #FFB300;
 }
 
-/* Container for the story cards */
-.stories-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 50px 0;
-    background-color: white;
-}
 
-/* Styling each story card as a rectangle */
-.story-card {
-    display: flex;
-    align-items: center;
-    background: #FFFFFF;
-    border: 3px solid #FFC107;
-    border-radius: 20px;
-    width: 750px;
-    height: 250px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-/* Styling each story card as a rectangle */
-.story-card {
-    display: flex;
-    align-items: stretch; /* Stretch content to fill the card */
-    background: #FFFFFF;
-    border: 3px solid #FFC107;
-    border-radius: 20px;
-    width: 700px;
-    height: 250px;
-    overflow: hidden;
-}
-
-/* Container for the image */
-.story-image-container {
-    flex-shrink: 0; 
-    width: 40%; 
-    height: 100%; 
-    overflow: hidden;
-}
-
-.story-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.story-content {
-    padding: 20px;
-    width: 60%; 
-    text-align: left;
-}
-
-.story-content h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
-}
-
-.story-content p {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.read-more-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #FFC107;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-    transition: background-color 0.3s;
-}
-
-.read-more-btn:hover {
-    background-color: #e6a700;
-}
 
 /* Footer section styling */
 .footer {
@@ -314,7 +332,7 @@
 }
 
 .brand-story h2 {
-    font-family: 'Inter';
+    font-family: 'Jost';
     font-size: 48px; 
     font-weight: 600; 
     color: #1A1A1A; 
@@ -397,11 +415,18 @@
             <h2>STAND-OUT DESIGNS FOR OUTSTANDING IDEAS</h2>
             <p>We transform outstanding ideas into stand-out paper experiences that catch the eye and capture the heart. Our designs are made with excellence and a sense of wonder.</p>
             <div class="hero-buttons">
-                <a href="works.php" class="btn">View our works</a>
-                <a href="contact.php" class="btn">Connect with us</a>
+                <a href="works.php" class="btn">View our works <span class="arrow-right">→</span></a>
+                <a href="contact.php" class="btn">Connect with us <span class="arrow-right">→</span></a>
             </div>
         </div>
+
+        <div class="circle-indicators">
+            <span class="circle"></span>
+            <span class="circle"></span>
+            <span class="circle"></span>
+        </div>
     </section>
+
 
     <section class="video-showcase">
         <h2>Watch Our Story</h2>
@@ -511,32 +536,7 @@
             </svg>
 
 
-            <!-- The heading placed inside the SVG -->
-            <h2 class="svg-heading">CATCH OUR LATEST STORIES HERE</h2>
-        </div>
-
-        <div class="stories-container">
-    <div class="story-card">
-        <div class="story-image-container">
-            <img src="images/amystory.png" alt="The Art & Science of Paper Engineering" class="story-image">
-        </div>
-
-        <div class="story-content">
-            <h3>THE ART & SCIENCE OF PAPER ENGINEERING</h3>
-            <p>In 2018, I had the privilege of sharing my passion for paper engineering on the lifestyle and arts television show Tribe, on Net 25. The episode was aired on a national holiday, and they invited me to create a simple pop-up version of the Rizal Monument for the segment. It was such a great way to celebrate national heritage through creativity.</p>
-            <a href="#" class="read-more-btn">Read More</a>
-        </div>
-    </div>
-
-    <div class="story-card">
-        <div class="story-image-container">
-            <img src="images/amystory2.png" alt="The Power of Interactive Pop-Up Design" class="story-image">
-        </div>
-        <div class="story-content">
-            <h3>THE POWER OF INTERACTIVE POP-UP DESIGN</h3>
-            <p>In 2018, I had the privilege of sharing my passion for paper engineering on the lifestyle and arts television show Tribe, on Net 25. The episode was aired on a national holiday, and they invited me to create a simple pop-up version of the Rizal Monument for the segment. It was such a great way to celebrate national heritage through creativity.</p>
-        </div>
-    </div>
+    
 </div>
     </section>
 
