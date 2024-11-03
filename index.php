@@ -5,16 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <link rel="icon" href="images/logo1.png">
+    <link rel="icon" href="images/logo2.png">
     <title>Pumapapel Pop-Up Design Studio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
 
+/* Header styling */
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.header.scrolled {
+    background-color: #f0c040;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    justify-content: center; /* Center content when scrolled */
+}
+
+/* Logo styling */
+.logo-image {
+    width: 180px;
+    height: auto;
+    margin-right: 20px; /* Space between logo and nav links */
+    transition: transform 0.3s, width 0.3s;
+}
+
+.header.scrolled .logo-image {
+    display: none; /* Hide logo when scrolled */
+}
+
+
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.logo-image {
+    width: 250px; 
+    height: auto; 
+    transition: transform 0.3s; 
+}
+
+.logo-image:hover {
+    transform: scale(1.05); 
+}
+
 .navbar {
     font-family: 'Inter';
     display: flex;
-    gap: 150px;
+    gap: 80px;
     margin: 0;
     padding: 10px 20px; 
     list-style: none;
@@ -31,49 +87,22 @@
     position: relative; 
 }
 
-.hero-text h2 {
-    font-family: 'Inter';
-    font-size: 48px;
-    font-weight: 800px;
-    margin-bottom: 20px;
-}
-
-.hero-text p {
-    font-family: 'Inter';
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-
-.hero-buttons {
-    font-family: 'Inter';
-    display: flex;
-    gap: 20px;
-}
-
-.btn {
+.nav-item a {
     text-decoration: none;
-    background-color: #f0c040;
-    color: #000;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: 500px;
+    font-weight: bold; 
+    color: #000; 
     font-size: 16px;
+    padding: 10px 15px;
+    position: relative; 
 }
 
-body {
-    font-family: 'Inter';
-    margin: 0;
-    padding: 0;
-    color: #333;
+.nav-item a:hover {
+    color: #fff; 
 }
 
-
-
-
-
-
-
-
+.nav-item a.active {
+    color: #fff; 
+}
 
 /* Latest Story */
 .wave-background-container {
@@ -310,6 +339,7 @@ body {
 
 </style>
 <body>
+
     <header class="header">
         <div class="logo">
             <img src="images/logo1.PNG" alt="Pumapapel Logo" class="logo-image">
@@ -318,9 +348,12 @@ body {
             <li class="nav-item"><a href="index.php" id="home-link">Home</a></li>
             <li class="nav-item"><a href="brand.php" id="brand-link">Brand Story</a></li>
             <li class="nav-item"><a href="works.php" id="works-link">Our Works</a></li>
+            <li class="nav-item"><a href="blog.php" id="blog-link">Blog</a></li>
+            <li class="nav-item"><a href="services.php" id="services-link">Services</a></li>
             <li class="nav-item"><a href="workshop.php" id="workshop-link">Workshops</a></li>
             <li class="nav-item"><a href="contact.php" id="contact-link">Contact Us</a></li>
         </ul>
+    </header>
 
         <script>
             const currentPage = window.location.pathname;
@@ -344,9 +377,20 @@ body {
 
             setActiveLink();
         </script>
-            
-    </header>
 
+    <script>
+        window.addEventListener("scroll", function() {
+            const header = document.querySelector(".header");
+            const scrollPos = window.scrollY;
+
+            if (scrollPos > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    </script>
+            
     <section class="hero">
         <img src="" alt="" class="hero-image">
         <div class="hero-text">
